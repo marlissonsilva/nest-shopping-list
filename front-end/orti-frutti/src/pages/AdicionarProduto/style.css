@@ -1,0 +1,23 @@
+.produto__container{
+    padding: 16px;
+}
+
+.produto__container h1{
+   font-size: 20px;
+   font-weight: bold;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.form{
+    max-width: 500px;
+    background-color: rgba(68, 70, 70, 0.301);
+    padding: 16px;
+    margin: auto;
+  
+}
+
+.btn{
+    width: 100px;
+    margin: auto;
+}

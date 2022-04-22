@@ -1,0 +1,12 @@
+.produto__container{
+    width: 100%;
+    max-width: 1200px;
+    padding: 16px;
+}
+
+.produto__card__container__det{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
