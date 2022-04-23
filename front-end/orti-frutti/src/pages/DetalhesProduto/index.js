@@ -58,7 +58,7 @@ export default function DetalhesProduto() {
             <div className="produto__card__container__det">
                 <Card key={produto.id} title={produto.name} bordered={false} >
                     <p>Id: {produto.id}</p>
-                    <p>UpdateAt: {produto.upadateAt}</p>
+                    <p>UpdateAt: {produto.updatedAt}</p>
                     <p>Descrição: {produto.description}</p>
                     <p>Quantidade: {produto.quantity}</p>
                     <Button type="danger" onClick={()=> showConfirm(produto)} >Excluir produto</Button>

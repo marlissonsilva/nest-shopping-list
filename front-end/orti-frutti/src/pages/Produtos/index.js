@@ -21,12 +21,12 @@ export default function Produtos() {
     }, [])
 
     return (
-        <div className='produto__container'>
+        <div className='produto__container__prod'>
             <h1>Relação de todos os produtos</h1>
 
-            <div className='produto__card__container'>
+            <div className='produto__card__container__prod'>
                 {produtos.map(produto => (
-                    <Card key={produto.id} title={produto.name} bordered={false} style={{ width: 300 }}>
+                    <Card className='card' key={produto.id} title={produto.name} bordered={false} >
                         <p> Descrição: {produto.description}</p>
                         <p>Quantidade: {produto.quantity}</p>
                         <Button onClick={()=> history.push(`/detalhes/${produto.id}`) }>Detalhes</Button>
