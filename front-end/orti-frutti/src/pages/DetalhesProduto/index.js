@@ -5,7 +5,7 @@ import { useParams, useHistory } from "react-router-dom";
 import './style.css'
 
 import { Card, message, Button, Modal } from "antd";
-import { ExclamationCircleOutlined  } from '@ant-design/icons';
+import { ExclamationCircleOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 
 export default function DetalhesProduto() {
 
@@ -15,7 +15,7 @@ export default function DetalhesProduto() {
 
     const { confirm } = Modal;
 
-        function showConfirm(produto) {
+    function showConfirm(produto) {
         confirm({
             title: 'Deseja mesmo excluir produto?',
             icon: <ExclamationCircleOutlined />,
@@ -27,7 +27,7 @@ export default function DetalhesProduto() {
                 console.log('Cancel');
             },
         });
-        }
+    }
 
     function handleDelete(id) {
         api.delete(`/item/${id}`)
@@ -61,7 +61,10 @@ export default function DetalhesProduto() {
                     <p>UpdateAt: {produto.updatedAt}</p>
                     <p>Descrição: {produto.description}</p>
                     <p>Quantidade: {produto.quantity}</p>
-                    <Button type="danger" onClick={()=> showConfirm(produto)} >Excluir produto</Button>
+                    <div className="btn__container">
+                        <Button type="primary" icon={<EditOutlined />} onClick={() => history.push(`/editar/${produto.id}`, produto)} >Editar</Button>
+                        <Button type="danger" icon={<DeleteOutlined />} onClick={() => showConfirm(produto)} >Excluir</Button>
+                    </div>
                 </Card>
             </div>
         </div >

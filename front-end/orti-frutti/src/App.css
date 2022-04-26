@@ -12,8 +12,11 @@
 
 .header {
   background: #3484b9;
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 700;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding:0 10px;
 }
 
 .menu {
@@ -24,6 +27,7 @@
 .content {
   padding: 18px;
   overflow: auto;
+  background: #c5c5c5;
 }
 
 .footer {

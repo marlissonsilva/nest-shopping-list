@@ -7,34 +7,39 @@ import { Item } from './entities/item.entity';
 
 @Injectable()
 export class ItemService {
- constructor(@InjectRepository(Item) private readonly repository: Repository<Item>) { }
+  constructor(@InjectRepository(Item) private readonly repository: Repository<Item>) { }
 
- create(createItemDto: CreateItemDto): Promise<Item> {
-   const item = this.repository.create(createItemDto);
-   return this.repository.save(item);
- }
+  create(createItemDto: CreateItemDto): Promise<Item> {
+    const item = this.repository.create(createItemDto);
+    return this.repository.save(item);
+  }
 
- findAll(): Promise<Item[]> {
-   return this.repository.find({order: {name: "ASC"}});
- }
+  findAll(): Promise<Item[]> {
+    return this.repository.find({ order: { name: "ASC" } });
+  }
 
- findOne(id: string): Promise<Item> {
-   return this.repository.findOne(id);
- }
+  findOne(id: string): Promise<Item> {
+    return this.repository.findOne(id);
 
- async update(id: string, updateItemDto: UpdateItemDto): Promise<Item> {
-   const item = await this.repository.preload({
-     id: id,
-     ...updateItemDto,
-   });
-   if (!item) {
-     throw new NotFoundException(`Item ${id} not found`);
-   }
-   return this.repository.save(item);
- }
+    // const item = await itemRepository.findBy({
+    //     id: id
+    // })
+    // *findOneBy()
+  }
 
- async remove(id: string) {
-   const item = await this.findOne(id);
-   return this.repository.remove(item);
- }
+  async update(id: string, updateItemDto: UpdateItemDto): Promise<Item> {
+    const item = await this.repository.preload({
+      id: id,
+      ...updateItemDto,
+    });
+    if (!item) {
+      throw new NotFoundException(`Item ${id} not found`);
+    }
+    return this.repository.save(item);
+  }
+
+  async remove(id: string) {
+    const item = await this.findOne(id);
+    return this.repository.remove(item);
+  }
 }

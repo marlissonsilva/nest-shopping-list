@@ -29,7 +29,7 @@ export default function Produtos() {
                     <Card className='card' key={produto.id} title={produto.name} bordered={false} >
                         <p> Descrição: {produto.description}</p>
                         <p>Quantidade: {produto.quantity}</p>
-                        <Button onClick={()=> history.push(`/detalhes/${produto.id}`) }>Detalhes</Button>
+                        <Button type='primary' onClick={()=> history.push(`/detalhes/${produto.id}`) }>Detalhes</Button>
                     </Card>
                 ))}
             </div>
