@@ -12,16 +12,17 @@
 
 .header {
   background: #3484b9;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   padding:0 10px;
+  text-align: center;
 }
-
 .menu {
   background: #3484b9;
   padding: 0px 10px;
+  padding-top: 64px;
 }
 
 .content {
@@ -37,3 +38,4 @@
   font-weight: 600;
   z-index: 999;
 }
+

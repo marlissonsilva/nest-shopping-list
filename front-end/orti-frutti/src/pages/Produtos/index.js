@@ -3,7 +3,7 @@ import api from '../../services/api';
 import { useHistory } from 'react-router-dom';
 
 import './style.css'
-import {Button,  Card } from 'antd';
+import { Button, Card, Spin } from 'antd';
 
 export default function Produtos() {
     const [produtos, setProdutos] = useState([])
@@ -23,15 +23,16 @@ export default function Produtos() {
     return (
         <div className='produto__container__prod'>
             <h1>Relação de todos os produtos</h1>
-
             <div className='produto__card__container__prod'>
                 {produtos.map(produto => (
                     <Card className='card' key={produto.id} title={produto.name} bordered={false} >
                         <p> Descrição: {produto.description}</p>
                         <p>Quantidade: {produto.quantity}</p>
-                        <Button type='primary' onClick={()=> history.push(`/detalhes/${produto.id}`) }>Detalhes</Button>
+                        <Button type='primary' onClick={() => history.push(`/detalhes/${produto.id}`)}>Detalhes</Button>
                     </Card>
+
                 ))}
+
             </div>
 
         </div>
