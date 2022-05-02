@@ -12,7 +12,6 @@ function App() {
   let history = useHistory();
 
   function handleClick() {
-    console.log(handleClick)
     history.push("/adicionar")
   }
   return (
