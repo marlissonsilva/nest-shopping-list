@@ -19,8 +19,8 @@ function App() {
       <Layout className='main__content'>
         <Sider className='menu'>
           <Menu className='menu__section'>
-          <Menu.Item key={1} icon={<PlusOutlined />} onClick={() => history.push('/')}>
-             Home
+            <Menu.Item key={1} icon={<HomeOutlined />} onClick={() => history.push('/')}>
+              Home
             </Menu.Item>
             <Menu.Item key={2} icon={<PlusOutlined />} onClick={handleClick}>
               Adicionar Produto

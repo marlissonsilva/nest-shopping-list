@@ -38,7 +38,7 @@ export default function DetalhesProduto() {
                 }
             })
             .catch((err) => {
-                message.error('Aconteceu um erro inesperado')
+                message.error('Aconteceu um erro inesperado' + err)
             })
     }
 
@@ -48,7 +48,7 @@ export default function DetalhesProduto() {
                 setProduto(response.data)
             })
             .catch((err) => {
-                message.error('Aconteceu um erro inesperado')
+                message.error('Aconteceu um erro inesperado' + err)
             })
     }, [])
 

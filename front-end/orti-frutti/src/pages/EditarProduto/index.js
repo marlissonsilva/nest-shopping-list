@@ -5,7 +5,7 @@ import api from '../../services/api'
 
 import { useHistory, useLocation } from 'react-router-dom'
 
-import { mesagge, Input, Button, InputNumber, message } from 'antd';
+import {Input, Button, InputNumber, message } from 'antd';
 
 export default function EditarProduto() {
 
