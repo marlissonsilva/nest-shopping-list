@@ -20,7 +20,7 @@
 }
 
 .card {
-   width: 200px; 
+   width: 150px; 
    height: 270px;
 }
 
@@ -31,7 +31,7 @@
 
 @media only screen and (max-width: 1366px) {
     .card {
-        width: 150px;
+        width: 200px;
      }
 }
 
