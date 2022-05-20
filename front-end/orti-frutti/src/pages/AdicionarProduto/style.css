@@ -11,9 +11,10 @@
 
 .form{
     max-width: 500px;
-    background-color:#b4b3b3;
+    background-color:#0959d120;
     padding: 16px;
     margin: auto;
+    border-radius: 20px;
   
 }
 

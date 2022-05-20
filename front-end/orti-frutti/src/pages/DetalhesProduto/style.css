@@ -15,3 +15,7 @@
     display: flex;
     justify-content: space-between;
 }
+.btns:hover{
+    transform: scale(1.04);
+    color: rgb(57, 55, 55);
+}

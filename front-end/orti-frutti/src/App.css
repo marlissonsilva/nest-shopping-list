@@ -11,27 +11,32 @@
 }
 
 .header {
+  grid-area: hd;
   background: #3484b9;
   font-size: 20px;
   font-weight: 700;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
-  padding:0 10px;
+  padding: 0 10px;
   text-align: center;
 }
+
 .menu {
+  grid-area: mn;
   background: #3484b9;
   padding: 0px 10px;
   padding-top: 64px;
 }
 
 .content {
+  grid-area: cot;
   padding: 18px;
   overflow: auto;
-  background: #c5c5c5;
+  background: #0984f829;
 }
 
 .footer {
+  grid-area: ft;
   background: #3484b9;
   text-align: center;
   font-size: 18px;
@@ -39,3 +44,6 @@
   z-index: 999;
 }
 
+@media screen and (max-width:768px) {
+  
+}

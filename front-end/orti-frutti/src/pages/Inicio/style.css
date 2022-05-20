@@ -11,11 +11,12 @@
 
 .button{
     max-width: 200px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .img{
     max-width: 350px;
     margin-top: 20px;
+    border-radius: 50%;
 
 }

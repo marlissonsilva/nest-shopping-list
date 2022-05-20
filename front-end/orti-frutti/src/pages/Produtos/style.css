@@ -7,31 +7,63 @@
 .produto__container__prod h1 {
     /* text-align: center; */
     font-size: 25px;
-    
+
 }
 
 .produto__card__container__prod {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    align-items: center;
     gap: 5px;
-    justify-content:flex-start;
-
+    justify-content: flex-start;
 }
 
 .card {
-   width: 150px; 
-   height: 270px;
+    width: 150px;
+    height: 270px;
 }
 
-.btn-detalhes{
+.btn-detalhes {
     position: absolute;
     bottom: 15px;
 }
 
+.btn-detalhes:hover {
+    transform: scale(1.04);
+    color: rgb(57, 55, 55);
+}
+
+.contador {
+    float: right;
+    padding-right: 10px;
+    font-size: 20px;
+
+}
+
+.loading {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@keyframes go-loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
 @media only screen and (max-width: 1366px) {
     .card {
         width: 200px;
-     }
+    }
 }
-

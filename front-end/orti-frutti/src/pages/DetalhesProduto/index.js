@@ -8,7 +8,7 @@ import { Card, message, Button, Modal } from "antd";
 import { ExclamationCircleOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 
 export default function DetalhesProduto() {
-
+    const [disabled, setDisabled] = useState(false)
     const history = useHistory()
     const [produto, setProduto] = useState([])
     let { id } = useParams();
@@ -16,12 +16,14 @@ export default function DetalhesProduto() {
     const { confirm } = Modal;
 
     function showConfirm(produto) {
+
         confirm({
             title: 'Deseja mesmo excluir produto?',
             icon: <ExclamationCircleOutlined />,
             content: produto.name,
             onOk() {
                 handleDelete(produto.id);
+
             },
             onCancel() {
                 console.log('Cancel');
@@ -30,6 +32,7 @@ export default function DetalhesProduto() {
     }
 
     function handleDelete(id) {
+        setDisabled(true)
         api.delete(`/item/${id}`)
             .then((response) => {
                 if (response.status === 200) {
@@ -50,7 +53,7 @@ export default function DetalhesProduto() {
             .catch((err) => {
                 message.error('Aconteceu um erro inesperado' + err)
             })
-    }, [])
+    }, [id])
 
     return (
         <div className='produto__container'>
@@ -62,8 +65,8 @@ export default function DetalhesProduto() {
                     <p>Descrição: {produto.description}</p>
                     <p>Quantidade: {produto.quantity}</p>
                     <div className="btn__container">
-                        <Button type="primary" icon={<EditOutlined />} onClick={() => history.push(`/editar/${produto.id}`, produto)} >Editar</Button>
-                        <Button type="danger" icon={<DeleteOutlined />} onClick={() => showConfirm(produto)} >Excluir</Button>
+                        <Button className="btns" type="primary" icon={<EditOutlined />} onClick={() => history.push(`/editar/${produto.id}`, produto)} >Editar</Button>
+                        <Button className="btns" type="danger" disabled={disabled} icon={<DeleteOutlined />} onClick={() => showConfirm(produto)} >Excluir</Button>
                     </div>
                 </Card>
             </div>
